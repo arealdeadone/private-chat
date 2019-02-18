@@ -1,0 +1,27 @@
+{
+  "name": "privatechat",
+  "version": "1.0.0",
+  "description": "Private Chat Using Socket.IO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arealdeadone/private-chat.git"
+  },
+  "author": "Rachuri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arealdeadone/private-chat/issues"
+  },
+  "homepage": "https://github.com/arealdeadone/private-chat#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dependable": "^1.1.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-promise-router": "^3.0.3",
+    "lodash": "^4.17.11"
+  }
+}
