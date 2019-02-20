@@ -222,4 +222,34 @@ footer .container .text-muted {
     padding-left: 15px;
 }
 
+.btn-facebook{
+    background: #4aa1f3;
+    color: #fff;
+    width: 100px;
+}
 
+a.btn-facebook:visited, a.btn-facebook:link{
+    text-transform: none;
+    color: #fff;
+}
+
+a.btn-facebook:active, a.btn-facebook:hover {
+    background: #4aa1f3;
+    color: #fff;
+}
+
+.btn-gplus{
+    background: #e44b34;
+    color: #fff;
+    width: 100px;
+}
+
+a.btn-gplus:visited, a.btn-gplus:link{
+    text-transform: none;
+    color: #fff;
+}
+
+a.btn-gplus:active, a.btn-gplus:hover {
+    background: #e44b34;
+    color: #fff;
+}
