@@ -1,10 +1,13 @@
 'use strict';
 
-module.exports = function (_) {
+module.exports = function (_, passport, User) {
     return {
         SetRouting: function (router) {
             router.get('/', this.indexPage);
-            router.get('/signup', this.getSignup);
+            router.get('/signup', this.getSignUp);
+            router.get('/home', this.homePage);
+
+            router.post('/signup', User.SignUpValidation, this.postSignUp);
         },
 
         indexPage: function (req, res) {
@@ -12,8 +15,19 @@ module.exports = function (_) {
             return res.render('index');
         },
 
-        getSignup: function (req, res) {
-            return res.render('signup');
+        getSignUp: function (req, res) {
+            const errors = req.flash('error');
+            return res.render('signup', {title: 'PrivateChat | Login', messages: errors, hasErrors: errors.length > 0});
+        },
+
+        postSignUp: passport.authenticate('local.signup', {
+            successRedirect: '/home',
+            failureRedirect: '/signup',
+            failureFlash: true
+        }),
+
+        homePage: function (req, res) {
+            return res.render('home');
         }
     }
 };

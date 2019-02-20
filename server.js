@@ -7,12 +7,12 @@ const validator = require('express-validator');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
-// const flash = require('connect-flash');
+const flash = require('connect-flash');
 const passport = require('passport');
 
 const container = require('./container');
 
-container.resolve(function (users) {
+container.resolve(function (users, _) {
 
     mongoose.Promise = global.Promise;
     mongoose.connect('mongodb://localhost/privatechat', {useNewUrlParser: true});
@@ -51,8 +51,9 @@ container.resolve(function (users) {
             store: new MongoStore({mongooseConnection: mongoose.connection})
         }));
         //
-        // app.use(flash);
+        app.use(flash);
         app.use(passport.initialize());
         app.use(passport.session());
+        app.locals._ = _;
     }
 });
