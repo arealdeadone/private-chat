@@ -15,7 +15,7 @@ const container = require('./container');
 container.resolve(function (users, _) {
 
     mongoose.Promise = global.Promise;
-    mongoose.connect('mongodb://localhost/privatechat', {useNewUrlParser: true});
+    mongoose.connect('mongodb://privatechat:privatechat123@ds155864.mlab.com:55864/simple-chat', {useNewUrlParser: true});
     const app = setupExpress();
 
     function setupExpress() {
